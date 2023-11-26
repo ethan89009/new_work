@@ -12,24 +12,46 @@
         <img src="2.png" alt="image of person" />
       </div>
       <div class="infocontainer">
-        <p class="info">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam
-          qui id quos omnis fugiat voluptatibus saepe reiciendis illo eaque,
-          explicabo et tenetur similique neque optio dolorum, corporis
-          temporibus quidem aliquam.
-        </p>
-        <p class="info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-          suscipit ratione similique dolorem placeat deserunt sint perferendis
-          dolore numquam. Facere, laudantium saepe magnam est tempore doloribus
-          distinctio maiores porro minus.
-        <p class="info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-          suscipit ratione similique dolorem placeat deserunt sint perferendis
-          dolore numquam. Facere, laudantium saepe magnam est tempore doloribus
-          distinctio maiores porro minus.
-        </p>
+        <div class="infocontainer-list" id="carousel-cont">
+          <p class="info">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam
+            qui id quos omnis fugiat voluptatibus saepe reiciendis illo eaque,
+            explicabo et tenetur similique neque optio dolorum, corporis
+            temporibus quidem aliquam.
+          </p>
+          <p class="info">
+            Lorem ipsu
+          <p class="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+            suscipit saepe magnam est tempore doloribus
+            distinctio maiores porro minus.
+          </p>
+        </div>
+        <div class="carousel-btns">
+          <button onclick="back()">Back</button>
+          <button onclick="forward()">Forward</button>
+        </div>
       </div>
     </div>
+    <script>
+      const carouselCon=document.getElementById("carousel-cont");
+      const count =2;
+      let pos=0;
+      let pixel=0;
+      function back(){
+        if(pos>=0){
+          pos--;
+          pixel=500*pos;
+          console.log(carouselCon.style['transform']=`translateX(-${pixel}px)`);
+        } 
+      }
+      function forward(){
+        if(pos<count){
+          pos++;
+          pixel=500*pos;
+          console.log(carouselCon.style['transform']=`translateX(-${pixel}px)`);
+        } 
+      }
+    </script>
   </body>
 </html>

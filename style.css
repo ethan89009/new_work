@@ -30,17 +30,21 @@
 .infocontainer{
     border: 1px inset black;
     margin: 10px 0px;
-    /* width:100%;*/
     width:500px;
+    position: relative;
     padding:10px;
     border-radius: 5px;
+    overflow-x: hidden;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
     /* border-style: inset; */
     /* box-shadow:10px ; */
 }
 .infocontainer p{
     border-style:outset;
     padding: 10px;
-    margin: 5px;
+    margin-inline: 20px;
 }
 body{
     background-color: rgba(110,110,110,0.9);
@@ -49,4 +53,32 @@ body{
     background-position: top;
     background-size: 100%;
     background-attachment: fixed;
+}
+
+.infocontainer-list{
+    width: calc(3*100%);
+    display: flex;
+    transform:translateX(0px);
+    transition: transform 0.2s ease-in-out;
+
+}
+.info{
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-btns{
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    /* this is a next gen css feature basically you can nest css using & , & basically means what ever the parent selector is plus what comes after & in this case it will be '.carousel-btns button' */
+    & button{
+        background-color: #ffffff;
+        border: none;
+
+    }
+    & button:hover{
+        background-color: #eeeeee;
+    }
 }
